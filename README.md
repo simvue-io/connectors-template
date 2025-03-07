@@ -52,7 +52,7 @@ Inside the `.github` directory, there are a number of workflows already created.
 
 * `test_macos`, `test_ubuntu`, `test_windows`: These run the unit tests, should not need to be altered
 * `test_integration`: These run the integration tests, you will need to provide a docker container to use and whatever installation steps are required for your case
-* `deploy`: Automates deployment to test-PyPI and PyPI for tagged releases (see below). You need to update the module names in this file - see the curly brackets.
+* `deploy`: Automates deployment to test-PyPI and PyPI for tagged releases (see below). You need to update the module names in this file - search for 'your-module-name' and replace as required.
 
 ### Deployment
 When you are happy with your connector and are ready to deploy it to PyPI for the first time, you need to do the following:
@@ -173,3 +173,7 @@ if __name__ == "__main__":
 ## License
 
 Released under the terms of the [Apache 2](https://github.com/simvue-io/client/blob/main/LICENSE) license.
+
+## Citation
+
+To reference Simvue, please use the information outlined in this [citation file](https://github.com/simvue-io/python-api/blob/dev/CITATION.cff).

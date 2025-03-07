@@ -38,5 +38,5 @@ def example(offline=False) -> None:
         return run.id
 
 if __name__ == "__main__":
-    fds_example("/fds_example")
+    example()
 

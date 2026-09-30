@@ -31,9 +31,11 @@ This is a template repository which allows you to quickly create new Connectors 
 First, make a name for your new connector. Typically, the module name is of the form `simvue-{software_name}`, and the connector class itself is of the form `{SoftwareName}Run`. Update the `pyproject.toml` file with the name of your module, and also update the directory currently called `simvue_template` with your module name.
 
 ### Creating the code
-Your connector class should be made in the `connector.py` file inside your module, with any extra functionality which it needs to work (but you don't want inside the class itself) put in files inside the `extras` directory. The connector should inherit from the `WrappedRun` class provided by the `simvue-connector` module, and should use `multiparser` to track and parse output files as they are being written. See an example in the [connectors-generic repository](https://github.com/simvue-io/connectors-generic), or check out any of our premade connectors for ideas:
+Your connector class should be made in the `connector.py` file inside your module, with any extra functionality which it needs to work (but you don't want inside the class itself) put in files inside the `extras` directory. The connector should inherit from the `WrappedRun` class provided by the `simvue-connector` module, and should use `multiparser` to track and parse output files as they are being written. See an example in `examples/connector_example.py`, or check out any of our premade connectors for ideas:
 
 * [FDS](https://github.com/simvue-io/connectors-fds)
+* [MOOSE](https://github.com/simvue-io/connectors-moose)
+
 
 Also look at the `CONTRIBUTING.md` file for expected coding standards.
 

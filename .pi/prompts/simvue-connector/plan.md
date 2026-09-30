@@ -1,9 +1,9 @@
-# /plan — plan the connector implementation
+# /simvue-connector plan — plan the connector implementation
 
 Turn the research in `docs/investigation.md` into a concrete implementation plan for this connector.
 
 ## Precondition — check first, abort if not met
-- `docs/investigation.md` must exist in this repo. If not: **abort** and say to run `/investigate` first (which itself requires `/setup`).
+- `docs/investigation.md` must exist in this repo. If not: **abort** and say to run `/simvue-connector investigate` first (which itself requires `/simvue-connector setup`).
 
 ## Steps
 1. Read `docs/investigation.md`, `CONNECTOR.md`, the module's `connector.py`, and `examples/connector_example.py`.
@@ -23,7 +23,7 @@ Turn the research in `docs/investigation.md` into a concrete implementation plan
    - **Test plan**: unit tests — each parser and connector method, mocked process, sample data files bundled in the repo, no software required; integration tests — end-to-end via the example, parametrised over offline/online, requiring the software + a Simvue server connection.
    - **Milestones**: ordered tasks, each small enough for one session.
 3. If beads is active in this repo (`bd where` succeeds; skip entirely if it errors), create one issue per milestone, chained with blocked-by in plan order.
-4. Report: `docs/plan.md` written (plus issue ids if created), and that the next step is `/implement`.
+4. Report: `docs/plan.md` written (plus issue ids if created), and that the next step is `/simvue-connector implement`.
 
 ## Rules
 - No code changes. The only writes are `docs/plan.md` (and beads issues, if in use).

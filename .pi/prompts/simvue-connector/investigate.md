@@ -1,9 +1,9 @@
-# /investigate — research the simulation software
+# /simvue-connector investigate — research the simulation software
 
 Discover what users of the target simulation software would want to upload to Simvue before, during and after a run, based on its input/output files.
 
 ## Precondition — check first, abort if not met
-- Must be inside a connector repo created by `/setup` (i.e. `CONNECTOR.md` exists). If not: **abort** and say to run `/setup` first.
+- Must be inside a connector repo created by `/simvue-connector setup` (i.e. `CONNECTOR.md` exists). If not: **abort** and say to run `/simvue-connector setup` first.
 
 ## Steps
 1. Read `CONNECTOR.md`.
@@ -18,7 +18,7 @@ Discover what users of the target simulation software would want to upload to Si
    - **After run**: final result files (Artifact candidates); summary/verdict information and error messages (Event candidates).
    - **Metric candidates**: quantities users would monitor or alert on.
    - **Open questions**: gaps to resolve during planning.
-4. Report: file written, key findings, and that the next step is `/plan`.
+4. Report: file written, key findings, and that the next step is `/simvue-connector plan`.
 
 ## Rules
 - Research only. The only write into this repo is `docs/investigation.md`.

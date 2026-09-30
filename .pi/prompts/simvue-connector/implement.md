@@ -1,9 +1,9 @@
-# /implement — implement the connector and its tests
+# /simvue-connector implement — implement the connector and its tests
 
 Implement the connector per `docs/plan.md`, conforming to the template's structure and conventions.
 
 ## Precondition — check first, abort if not met
-- `docs/plan.md` must exist in this repo. If not: **abort** and say to run `/plan` first (which requires `/investigate`, which requires `/setup`).
+- `docs/plan.md` must exist in this repo. If not: **abort** and say to run `/simvue-connector plan` first (which requires `/simvue-connector investigate`, which requires `/simvue-connector setup`).
 
 ## Steps
 1. Read `docs/plan.md`, `docs/investigation.md`, `CONNECTOR.md`, the module's `connector.py`, `examples/`, and `CONTRIBUTING.md`.

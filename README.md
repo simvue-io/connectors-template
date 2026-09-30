@@ -27,6 +27,17 @@ This is a template repository which allows you to quickly create new Connectors 
 
 ## How to use this template
 
+### Automated workflow (prompts/)
+This repo ships AI-agent prompts in `prompts/` which build a connector end to end. They must be run **in order** — each one aborts with guidance if a previous stage is missing:
+
+| Prompt | Does |
+|---|---|
+| `/setup` | Creates `connectors-<software>` from this template; checks the software can run locally (asks the user for a way to run it if not) |
+| `/investigate` | Researches the software's docs/code and its input/output files; writes `docs/investigation.md` |
+| `/plan` | Writes `docs/plan.md` mapping key outputs to Simvue features (Metrics, Events, Metadata, Artifacts...); creates beads issues if beads is in use |
+| `/implement` | Writes the connector (a `WrappedRun` subclass) plus unit tests (no software needed) and end-to-end integration tests (software + Simvue server required) |
+| `/build` | Runs all four in order, each in a fresh context window |
+
 ### Naming your connector
 First, make a name for your new connector. Typically, the module name is of the form `simvue-{software_name}`, and the connector class itself is of the form `{SoftwareName}Run`. Update the `pyproject.toml` file with the name of your module, and also update the directory currently called `simvue_template` with your module name.
 

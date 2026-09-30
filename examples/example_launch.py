@@ -1,7 +1,7 @@
 """
 Connector Example
-========================
-This is an example of the {YourRun} Connector class.
+===================
+This is an example launching a simulation with the {YourRun} Connector class.
 
 Explain what your example simulation does...
 
@@ -11,32 +11,38 @@ Provide instructions on how to run your connector, eg:
     - Activate the environment: source venv/bin/activate
     - Install the module: pip install .
     - Etc...
-
 """
 
 import pathlib
-import shutil
 import uuid
-from simvue_template.connector import YourRun
+from examples.connector_example import TemperatureRun
 
-# Define a function for running your example
-def example(offline=False) -> None:
-    
-    # Delete old copies of results, if they exist:
-    if pathlib.Path(__file__).parent.joinpath("results").exists():
-        shutil.rmtree(pathlib.Path(__file__).parent.joinpath("results"))
 
-    # Initialise the FDSRun class as a context manager
-    with YourRun(mode="offline" if offline else "online") as run:
-        # Initialise the run
-        run.init(name="simulation_example")
+def custom_connector_example(offline: bool = False) -> str | None:
 
-        # Call the .launch() method to start your FDS simulation, providing the path to the input file
-        run.launch()
-        
-        # Make sure you return the run ID, for use in the integration tests
+    # Remove results from previous run of this example
+    pathlib.Path(__file__).parent.joinpath("temperatures.csv").unlink(missing_ok=True)
+
+    # Use our custom connector class
+    with TemperatureRun(mode="offline" if offline else "online") as run:
+        # Initialize the run as normal
+        _uuid = f"{uuid.uuid4()}".split("-")[0]
+        run.init(
+            name=f"custom-connector-example-{_uuid}",
+            folder="/examples",
+            description="Simulate an experiment where a sample is heated and then left to cool, tracking the temperature.",
+            tags=["example", "heating-cooling"],
+        )
+
+        # Can upload extra things we care about, eg could upload some metadata
+        run.update_metadata(
+            {"initial_temperature": 20, "heating_time": 50, "cooling_time": 100}
+        )
+        # Then run launch to start the experiment
+        run.launch(pathlib.Path(__file__).parent.joinpath("temperatures.sh"))
+
         return run.id
 
-if __name__ == "__main__":
-    example()
 
+if __name__ == "__main__":
+    _ = custom_connector_example()

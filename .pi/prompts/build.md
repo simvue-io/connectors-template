@@ -8,7 +8,7 @@ Run `/setup` → `/investigate` → `/plan` → `/implement` in order, each in a
 
 ## Steps
 For each stage, in order — `setup`, `investigate`, `plan`, `implement`:
-1. Spawn a fresh subagent (new context window) whose task is the full contents of `prompts/<stage>.md`, with this appended context:
+1. Spawn a fresh subagent (new context window) whose task is the full contents of `.pi/prompts/<stage>.md`, with this appended context:
    - `setup`: the software name.
    - stages 2–4: working directory = the new repo path (recorded from the `setup` stage's report).
 2. Wait for the stage to finish, then verify its completion artifact before proceeding:

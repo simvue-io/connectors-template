@@ -27,8 +27,8 @@ This is a template repository which allows you to quickly create new Connectors 
 
 ## How to use this template
 
-### Automated workflow (prompts/)
-This repo ships AI-agent prompts in `prompts/` which build a connector end to end. They must be run **in order** — each one aborts with guidance if a previous stage is missing:
+### Automated workflow (.pi/prompts/)
+This repo ships AI-agent prompt templates in `.pi/prompts/` which build a connector end to end. In pi they appear as slash commands (after project trust is granted), and must be run **in order** — each one aborts with guidance if a previous stage is missing:
 
 | Prompt | Does |
 |---|---|

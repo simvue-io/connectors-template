@@ -23,3 +23,4 @@ Implement the connector per `docs/plan.md`, conforming to the template's structu
 
 ## Rules
 - Keep template conventions: full typing, ruff/pre-commit, Numpy-style docstrings. Never weaken a test to make it pass.
+- When instantiating new attributes for your Connector class, be aware that it will overwrite variables with the same name used in WrappedRun or the base simvue.Run class. Make sure your attribute names do not clash with existing names in WrappedRun or simvue.Run.
